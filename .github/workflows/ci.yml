@@ -40,25 +40,6 @@ jobs:
           name: coverage-report
           path: coverage.xml
 
- # sonar:
- #   needs: test
-  #cancel:   runs-on: ubuntu-latest
-  #cancel:   steps:
-     #continue-on-error: :  - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Download Coverage Report
-        uses: actions/download-artifact@v4
-        with:
-          name: coverage-report
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@v6
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
   train:
     needs: sonar
     runs-on: ubuntu-latest
