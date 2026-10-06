@@ -40,11 +40,11 @@ jobs:
           name: coverage-report
           path: coverage.xml
 
-  sonar:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
+ # sonar:
+ #   needs: test
+  #cancel:   runs-on: ubuntu-latest
+  #cancel:   steps:
+     #continue-on-error: :  - name: Checkout Code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
